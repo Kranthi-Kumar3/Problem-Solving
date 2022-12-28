@@ -1,1 +1,1 @@
-​
+year(time_stamp) = 2020
