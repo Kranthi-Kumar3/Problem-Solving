@@ -1,7 +1,7 @@
 class Solution:
     def countOdds(self, low: int, high: int) -> int:
         
-        """sol 1"""
+        """Approach 1"""
 #         count = 0
 #         if low & 1 != 0: count += 1 
             
@@ -10,6 +10,9 @@ class Solution:
         
 #         return count
 
-        """sol 2"""
-        if low & 1 or high & 1: return (high-low)//2 + 1
-        return (high-low)//2
+        """Approach 2"""
+        # if low & 1 or high & 1: return (high-low)//2 + 1
+        # return (high-low)//2
+        
+        """Approach 3"""
+        return (high+1)//2 - low//2
