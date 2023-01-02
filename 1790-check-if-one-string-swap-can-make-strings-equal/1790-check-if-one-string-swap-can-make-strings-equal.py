@@ -8,11 +8,8 @@ class Solution:
             if s1[i] != s2[i]:
                 swap.append(i)
                 if len(swap) > 2: return False
-        if len(swap) == 1: return False
-        s1 = list(s1)
-        s1[swap[0]], s1[swap[1]] = s1[swap[1]], s1[swap[0]]
-        s1 = "".join(s1)
-        # print(swap, s1, s2)
-        if s1 == s2: return True
+        if len(swap) == 2:
+            i, j = swap
+            return s1[i]==s2[j] and s1[j]==s2[i]
         return False
         
