@@ -1,5 +1,5 @@
 class Solution:
-    arr = {}
+    arr = set()
     def sum_of_squares_of_digits(self, n):
         ans = 0
         while n>0:
@@ -8,7 +8,7 @@ class Solution:
         return ans
     
     def reset(self):
-        Solution.arr = {}
+        Solution.arr = set()
     
     def isHappy(self, n: int) -> bool:
         arr = self.arr
@@ -16,10 +16,10 @@ class Solution:
         if n == 1: 
             self.reset()
             return True
-        if arr.get(n, 0) != 0: 
+        if n in arr: 
             self.reset()
             return False
-        arr[n] = 1
+        arr.add(n)
         return self.isHappy(self.sum_of_squares_of_digits(n))
     
     
